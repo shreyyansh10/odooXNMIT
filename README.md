@@ -1,3 +1,10 @@
+TEAM NAME- 404 THUGS
+SELECTED PROBLEM STATEMENT-1
+VIDEO LINK - https://drive.google.com/drive/folders/1-FA0zs0MvS1NtQ7QH4Rsrn-U0aSxAO4P?usp=sharing
+
+
+
+
 # 🌱 EcoFinds - Sustainable Second-Hand Marketplace
 
 **Empowering Sustainable Consumption Through Innovation** 
