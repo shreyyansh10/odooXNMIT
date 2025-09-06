@@ -99,7 +99,7 @@ const Signup = () => {
       const result = await register(userData);
       
       if (result.success) {
-        navigate('/dashboard');
+        navigate('/');
       } else {
         setErrors({ general: result.error });
       }

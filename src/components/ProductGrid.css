@@ -1,0 +1,207 @@
+/* Product Grid Styles */
+.product-grid-section {
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.product-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.results-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e5e7eb;
+  margin: 0;
+  background: linear-gradient(135deg, #e2e8f0, #93c5fd 40%, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.results-count {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Loading Grid */
+.loading-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 80px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.no-results-icon {
+  font-size: 4rem;
+  margin-bottom: 24px;
+  opacity: 0.6;
+}
+
+.no-results-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e5e7eb;
+  margin: 0 0 12px 0;
+}
+
+.no-results-message {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin: 0 0 24px 0;
+  line-height: 1.6;
+}
+
+.clear-search-button {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+}
+
+.clear-search-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(34, 197, 94, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-grid-section {
+    padding: 40px 16px;
+  }
+
+  .results-header {
+    margin-bottom: 30px;
+  }
+
+  .results-title {
+    font-size: 1.8rem;
+  }
+
+  .product-grid,
+  .loading-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .no-results {
+    padding: 60px 16px;
+  }
+
+  .no-results-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .no-results-title {
+    font-size: 1.3rem;
+  }
+
+  .no-results-message {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid-section {
+    padding: 30px 12px;
+  }
+
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .results-title {
+    font-size: 1.6rem;
+  }
+
+  .product-grid,
+  .loading-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .no-results {
+    padding: 40px 12px;
+  }
+
+  .no-results-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+
+  .no-results-title {
+    font-size: 1.2rem;
+  }
+
+  .no-results-message {
+    font-size: 0.9rem;
+  }
+
+  .clear-search-button {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Focus Styles for Accessibility */
+.clear-search-button:focus {
+  outline: 2px solid rgba(34, 197, 94, 0.6);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .results-count,
+  .no-results {
+    border: 2px solid #fff;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .clear-search-button {
+    transition: none;
+  }
+  
+  .clear-search-button:hover {
+    transform: none;
+  }
+}

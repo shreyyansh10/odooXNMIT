@@ -1,0 +1,225 @@
+/* Categories Section Styles */
+.categories-section {
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.categories-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.categories-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 40px 0;
+  color: #e5e7eb;
+  background: linear-gradient(135deg, #e2e8f0, #93c5fd 40%, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.category-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.category-card:hover::before {
+  opacity: 1;
+}
+
+.category-card.active {
+  border-color: rgba(34, 197, 94, 0.6);
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.category-card.active::before {
+  opacity: 1;
+}
+
+.category-icon {
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover .category-icon {
+  transform: scale(1.1);
+  background: rgba(34, 197, 94, 0.15);
+}
+
+.category-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.category-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+.category-count {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.category-arrow {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.category-card:hover .category-arrow {
+  opacity: 1;
+  color: #22c55e;
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .categories-section {
+    padding: 40px 16px;
+  }
+
+  .categories-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+  }
+
+  .category-card {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .category-icon {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .category-name {
+    font-size: 1rem;
+  }
+
+  .category-count {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories-section {
+    padding: 30px 12px;
+  }
+
+  .categories-title {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .category-card {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .category-icon {
+    font-size: 1.8rem;
+    width: 45px;
+    height: 45px;
+  }
+
+  .category-name {
+    font-size: 0.95rem;
+  }
+
+  .category-count {
+    font-size: 0.8rem;
+  }
+}
+
+/* Focus Styles for Accessibility */
+.category-card:focus {
+  outline: 2px solid rgba(34, 197, 94, 0.6);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .category-card {
+    border: 2px solid #fff;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .category-card,
+  .category-icon,
+  .category-arrow {
+    transition: none;
+  }
+  
+  .category-card:hover {
+    transform: none;
+  }
+}
