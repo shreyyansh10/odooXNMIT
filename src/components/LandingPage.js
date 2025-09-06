@@ -143,6 +143,7 @@ const LandingPage = () => {
       <Header 
         user={user} 
         isAuthenticated={isAuthenticated}
+        cartCount={0} // You can implement cart functionality later
       />
       
       <main className="landing-main">

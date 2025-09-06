@@ -1,258 +1,205 @@
-# Hackathon Authentication System
+# 🌱 EcoFinds - Sustainable Second-Hand Marketplace
 
-A complete, secure authentication system built with React and JWT for hackathon projects. This system provides login, signup, and protected routes with modern UI and robust security features.
+**Empowering Sustainable Consumption Through Innovation** 
 
-## 🚀 Features
-
-- **Secure Authentication**: JWT-based authentication with token expiration
-- **Modern UI**: Beautiful, responsive design with gradient backgrounds
-- **Form Validation**: Client-side and server-side validation
-- **Protected Routes**: Route guards to protect authenticated pages
-- **Password Security**: Strong password requirements and bcrypt hashing
-- **Auto Token Refresh**: Automatic token refresh handling
-- **Responsive Design**: Works perfectly on desktop and mobile
-- **Accessibility**: WCAG compliant with keyboard navigation support
-
-## 🛠️ Tech Stack
-
-### Frontend
-- React 18
-- React Router DOM
-- Axios for API calls
-- JWT Decode for token handling
-- Modern CSS with gradients and animations
-
-### Backend
-- Node.js with Express
-- JWT for token generation
-- Bcrypt for password hashing
-- Express Validator for input validation
-- CORS enabled for cross-origin requests
-
-## 📦 Installation
-
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
-
-### Frontend Setup
-
-1. Navigate to the project root:
-```bash
-cd /Users/yugansh/Downloads/odoo\ /
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm start
-```
-
-The frontend will be available at `http://localhost:3000`
-
-### Backend Setup
-
-1. Navigate to the backend directory:
-```bash
-cd backend
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Create environment file:
-```bash
-cp env.example .env
-```
-
-4. Edit `.env` file with your configuration:
-```env
-PORT=5000
-JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
-```
-
-5. Start the backend server:
-```bash
-npm start
-```
-
-The backend will be available at `http://localhost:5000`
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Create a `.env` file in the backend directory:
-
-```env
-PORT=5000
-JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
-NODE_ENV=development
-```
-
-### Frontend API Configuration
-
-The frontend is configured to connect to `http://localhost:5000/api` by default. You can change this by setting the `REACT_APP_API_URL` environment variable.
-
-## 📱 Usage
-
-### Authentication Flow
-
-1. **Sign Up**: Users can create new accounts with email and password
-2. **Login**: Existing users can sign in with their credentials
-3. **Protected Routes**: Authenticated users can access the dashboard
-4. **Logout**: Users can securely log out and clear their session
-
-### API Endpoints
-
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User login
-- `GET /api/auth/me` - Get current user info
-- `POST /api/auth/refresh` - Refresh JWT token
-- `GET /api/health` - Health check
-
-### Example API Usage
-
-```javascript
-// Register a new user
-const response = await fetch('http://localhost:5000/api/auth/register', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'john@example.com',
-    password: 'SecurePass123'
-  })
-});
-
-// Login
-const response = await fetch('http://localhost:5000/api/auth/login', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    email: 'john@example.com',
-    password: 'SecurePass123'
-  })
-});
-```
-
-## 🔒 Security Features
-
-- **Password Hashing**: Passwords are hashed using bcrypt with salt rounds
-- **JWT Tokens**: Secure token-based authentication with expiration
-- **Input Validation**: Both client and server-side validation
-- **CORS Protection**: Configured CORS for secure cross-origin requests
-- **Token Refresh**: Automatic token refresh to maintain sessions
-- **Route Protection**: Protected routes that require authentication
-
-## 🎨 UI Features
-
-- **Modern Design**: Beautiful gradient backgrounds and smooth animations
-- **Responsive Layout**: Works on all device sizes
-- **Form Validation**: Real-time validation with error messages
-- **Loading States**: Loading indicators for better UX
-- **Accessibility**: Keyboard navigation and screen reader support
-- **Dark Mode Ready**: CSS variables for easy theming
-
-## 🚀 Integration Guide
-
-### For Your Hackathon Project
-
-1. **Copy the authentication components** to your project
-2. **Update the API endpoints** to match your backend
-3. **Customize the styling** to match your brand
-4. **Add your business logic** to the dashboard component
-
-### Key Files to Customize
-
-- `src/components/Dashboard.js` - Add your main application content
-- `src/services/authService.js` - Update API endpoints
-- `src/components/Auth.css` - Customize the styling
-- `backend/server.js` - Add your business logic endpoints
-
-## 📁 Project Structure
-
-```
-hackathon-auth/
-├── public/
-│   ├── index.html
-│   └── manifest.json
-├── src/
-│   ├── components/
-│   │   ├── Login.js
-│   │   ├── Signup.js
-│   │   ├── Dashboard.js
-│   │   ├── ProtectedRoute.js
-│   │   ├── Auth.css
-│   │   └── Dashboard.css
-│   ├── contexts/
-│   │   └── AuthContext.js
-│   ├── services/
-│   │   └── authService.js
-│   ├── App.js
-│   ├── App.css
-│   ├── index.js
-│   └── index.css
-├── backend/
-│   ├── server.js
-│   ├── package.json
-│   └── env.example
-├── package.json
-└── README.md
-```
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **CORS Errors**: Make sure the backend is running and CORS is configured
-2. **Token Expired**: The system automatically handles token refresh
-3. **Validation Errors**: Check that all required fields are filled correctly
-4. **Port Conflicts**: Change the PORT in the backend .env file if needed
-
-### Development Tips
-
-- Use browser dev tools to inspect network requests
-- Check the console for any JavaScript errors
-- Verify that both frontend and backend are running
-- Test with different browsers for compatibility
-
-## 🔮 Future Enhancements
-
-- [ ] Email verification
-- [ ] Password reset functionality
-- [ ] Social login (Google, GitHub)
-- [ ] Two-factor authentication
-- [ ] User roles and permissions
-- [ ] Database integration (MongoDB, PostgreSQL)
-- [ ] Rate limiting
-- [ ] Logging and monitoring
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-Feel free to fork this project and submit pull requests for any improvements.
-
-## 📞 Support
-
-If you encounter any issues or have questions, please create an issue in the repository.
+*Revolutionizing the way people buy and sell pre-owned goods*
 
 ---
 
-**Happy Hacking! 🚀**
+## 🌟 What is EcoFinds?
 
-This authentication system is ready to be integrated into your hackathon project. The JWT tokens are properly configured, and the user context is available throughout your application.
+EcoFinds is more than just a marketplace – it's a **movement towards sustainable living**. Our platform creates a vibrant community where pre-owned goods find new homes, extending product lifecycles and reducing environmental waste. By making second-hand shopping convenient, trustworthy, and enjoyable, we're building the future of conscious consumption.
+
+## 🎯 Our Mission & Vision
+
+### 🚀 Vision
+> *To become the go-to destination for a conscious community seeking unique finds and responsible consumption through a thriving circular economy.*
+
+### 🎪 Mission  
+> *Develop an engaging, user-friendly platform that seamlessly connects buyers and sellers, making sustainable choices accessible, convenient, and inspiring for everyone.*
+
+---
+
+## ✨ Complete Feature Suite
+
+### 🔐 **Secure User Experience**
+| Feature | Description |
+|---------|-------------|
+| 🔑 **User Authentication** | Secure email & password registration/login system |
+| 👤 **Profile Management** | Customizable username and profile settings |
+| 🏠 **User Dashboard** | Comprehensive account management with editable fields |
+
+### 🛍️ **Smart Shopping Experience**
+| Feature | Description |
+|---------|-------------|
+| 🛒 **Shopping Cart** | Add, manage, and organize items before purchase |
+| 📦 **Purchase History** | Complete tracking of all previous purchases |
+| 🔍 **Advanced Search** | Keyword-based search across product titles |
+| 🏷️ **Category Filtering** | Smart filtering by predefined product categories |
+| 📱 **Product Browsing** | Beautiful grid view with titles and prices |
+
+### 📝 **Product Management Suite**
+| Feature | Description |
+|---------|-------------|
+| ➕ **Create Listings** | Easy product listing with title, description, category, price & image placeholders |
+| ✏️ **Edit Listings** | Full CRUD operations for managing your products |
+| 📊 **My Listings** | Dedicated dashboard for all your listed items |
+| 🔍 **Product Details** | Comprehensive product view with complete information |
+| 🖼️ **Image Support** | Professional image placeholder system for all products |
+
+---
+
+## 🎨 User Interface Design
+
+### 📱 **Core Application Screens**
+
+#### 🔐 **Login/Sign Up Screen**
+**Purpose:** Secure gateway to the EcoFinds ecosystem
+- **Elements:** 
+  - Prominent app logo and branding
+  - Clean email and password input fields
+  - Intuitive login button with sign-up navigation
+  - User-friendly authentication flow
+
+#### 🏠 **Product Listing Feed Screen** 
+**Purpose:** Central hub for discovering amazing second-hand finds
+- **Elements:**
+  - Eye-catching header with app title/logo
+  - Powerful search bar for instant keyword searches  
+  - Dynamic category filter options (buttons/dropdown)
+  - Engaging product grid displaying placeholder images, titles, and prices
+  - Prominent "+" floating action button for quick listing creation
+
+#### ➕ **Add New Product Screen**
+**Purpose:** Streamlined product listing creation experience
+- **Elements:**
+  - Intuitive back navigation
+  - Clear screen title ("Add New Product")
+  - Professional form layout with fields:
+    - Product Title (required)
+    - Category selection (dropdown menu)
+    - Rich description text area
+    - Price input (number validation)
+    - Image placeholder upload button ("+ Add Image")
+  - Prominent "Submit Listing" call-to-action button
+
+#### 📋 **My Listings Screen**
+**Purpose:** Personal product management dashboard
+- **Elements:**
+  - Branded header with app title/logo
+  - Quick "+" button for instant new product addition
+  - Organized list view of user's products featuring:
+    - Product placeholder images
+    - Product titles and prices
+    - Edit and Delete action buttons
+  - Empty state messaging for new users
+
+#### 🔍 **Product Detail Screen**
+**Purpose:** Immersive product discovery experience
+- **Elements:**
+  - Smooth back navigation
+  - Large, prominent product image placeholder
+  - Professional product information layout:
+    - Bold product title
+    - Competitive pricing display
+    - Category badge/tag
+    - Detailed product description
+  - Add to cart functionality
+
+#### 👤 **User Dashboard**
+**Purpose:** Comprehensive profile and account management
+- **Elements:**
+  - Branded header with app title/logo
+  - Professional user profile image placeholder
+  - Complete user information display
+  - Editable fields for all user data:
+    - Username customization
+    - Contact information
+    - Profile preferences
+  - Account settings and preferences
+
+#### 🛒 **Shopping Cart**
+**Purpose:** Streamlined purchase preparation experience
+- **Elements:**
+  - Clean header with app title/logo
+  - Professional product cards displaying:
+    - Product image placeholders
+    - Essential product information
+    - Quantity controls
+    - Individual pricing
+  - Cart total calculation
+  - Checkout preparation functionality
+
+#### 📦 **Purchase History**
+**Purpose:** Complete transaction tracking and history
+- **Elements:**
+  - Organized header with app title/logo
+  - Comprehensive list view of past purchases
+  - Transaction cards featuring:
+    - Product thumbnails
+    - Purchase dates
+    - Transaction amounts
+    - Order status indicators
+  - Search and filter capabilities for purchase history
+
+---
+
+## 🏗️ Technical Architecture
+
+### 🖥️ **Platform Support**
+- **✅ Desktop Application:** Full-featured desktop interface with responsive design
+- **📱 Mobile Application:** Native mobile experience with touch-optimized interactions  
+- **🌐 Cross-Platform:** Seamless synchronization across all devices
+
+### 🔧 **Core Technical Features**
+- **⚡ High Performance:** Efficient data structures ensuring smooth user experience
+- **🔒 Security First:** Secure authentication and data protection protocols
+- **📊 Smart Data Management:** Optimized storage for users, products, and transactions
+- **🎯 Responsive Design:** Adaptive interface for all screen sizes
+- **🚀 Real-time Updates:** Live synchronization of listings and user data
+
+---
+
+## 💡 Innovation Highlights
+
+### 🌍 **Sustainability Focus**
+- **♻️ Circular Economy:** Extending product lifecycles through reuse
+- **🌱 Environmental Impact:** Reducing waste and promoting conscious consumption  
+- **🤝 Community Building:** Creating connections between environmentally conscious users
+
+### 🎯 **User Experience Excellence**
+- **🔍 Smart Discovery:** Advanced search and filtering for finding perfect items
+- **📱 Mobile-First Design:** Optimized for on-the-go sustainable shopping
+- **⚡ Quick Actions:** Streamlined listing creation and purchase processes
+- **🛡️ Trust & Safety:** Secure transactions and verified user profiles
+
+---
+
+## 🚀 Getting Started
+
+### 📋 Prerequisites
+*Technology stack requirements will be added based on final implementation*
+
+### ⚙️ Installation Steps
+```bash
+# Clone the repository
+git clone https://github.com/your-team/ecofinds
+
+# Navigate to project directory
+cd ecofinds
+
+# Install dependencies
+# [Add specific commands for your tech stack]
+
+# Run the application
+# [Add run commands for both mobile and desktop]
+```
+
+
+<div align="center">
+
+**🌍 EcoFinds - Building a Sustainable Future, One Transaction at a Time ♻️**
+
+*Made with 💚 for the planet and community*
+
+</div>

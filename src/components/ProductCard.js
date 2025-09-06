@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [imageError, setImageError] = useState(false);
-  const navigate = useNavigate();
 
   const handleLike = (e) => {
     e.stopPropagation();
@@ -14,15 +12,6 @@ const ProductCard = ({ product }) => {
 
   const handleImageError = () => {
     setImageError(true);
-  };
-
-  const handleCardClick = () => {
-    navigate(`/product/${product.id}`);
-  };
-
-  const handleViewDetails = (e) => {
-    e.stopPropagation();
-    navigate(`/product/${product.id}`);
   };
 
   const getConditionColor = (condition) => {
@@ -39,7 +28,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="product-card" onClick={handleCardClick}>
+    <div className="product-card">
       <div className="product-image-container">
         {!imageError ? (
           <img
@@ -92,7 +81,7 @@ const ProductCard = ({ product }) => {
         </div>
         
         <div className="product-actions">
-          <button className="action-button primary" onClick={handleViewDetails}>
+          <button className="action-button primary">
             View Details
           </button>
           <button className="action-button secondary">
